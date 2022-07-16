@@ -8,4 +8,3 @@ a blog or comitment full stack application
 2.creat a table name comer , have 3 column , co001 bigint , co002 varchar 60, co003 text
 创建表 comer ,3个列名
 3.
-
