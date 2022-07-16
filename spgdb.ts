@@ -28,14 +28,32 @@ export class spgdb {
     }
     getval(para: any, rows: any, res: express.Response) {
         switch (para.pa01) {
-            case 's01': 
-                if(rows[0].counter>0){
+            case 's01':
+                if (rows[0].counter > 0) {
                     para.pa01 = 's02';
                     this.sqlexe(para, res);
-                }else {
+                } else {
                     res.json(rows);
-                }                
-                break;            
+                }
+                break;
+            case 'i01':
+                if (rows[0].counter == 0) {
+                    para.pa01 = 'i02';
+                    para.pa03.co001 = 10;
+                    para = this.trans.transql(para);
+                    this.sqlexe(para, res);
+                } else {
+                    para.pa01 = 'i03';
+                    para = this.trans.transql(para);
+                    this.sqlexe(para, res);
+                }
+                break;
+            case 'i03':
+                para.pa01 = 'i04';
+                para.pa03.co001 = rows[0].maxer;
+                para = this.trans.transql(para);
+                this.sqlexe(para, res);
+                break;
             default:
                 res.json(rows);
         }
