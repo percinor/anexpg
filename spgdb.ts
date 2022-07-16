@@ -4,10 +4,10 @@ import * as strans from './strans';
 
 export class spgdb {
     config = {
-        host: '127.0.0.1',
+        host: '198.52.117.196',
         user: "postgres",
         database: "angulardb",
-        password: "0000000",
+        password: "post999999",
         port: 5432,
         max: 100,
         idleTimeoutMillis: 3000

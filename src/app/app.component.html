@@ -1,11 +1,15 @@
 <h1>express</h1>
-<ul *ngFor="let dblist of dblists" >
-    <li ><p>{{dblist.co002}}</p><p>{{dblist.co003}}</p></li>
+<ul *ngFor="let dblist of dblists">
+    <li>
+        <p><label>{{dblist.co001}}</label>{{dblist.co002}}</p>
+        <p>{{dblist.co003}}</p>
+    </li>
 </ul>
 
 <input type="text" name="user" [(ngModel)]="para.pa03.co002">
-<textarea rows="10" cols="30"[(ngModel)]="para.pa03.co003">
+<br>
+<textarea rows="10" cols="30" [(ngModel)]="para.pa03.co003">
     </textarea>
-
+<br>
 <button (click)="sumit()">sumit</button>
 <router-outlet></router-outlet>

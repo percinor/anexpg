@@ -6,7 +6,7 @@ export class strans {
                 return para;
                 break;
             case 's02':
-                para.pa02 = 'select * from comer desc';
+                para.pa02 = 'select * from comer dsec ';
                 return para;
                 break;
             case 'i01':

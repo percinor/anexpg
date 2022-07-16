@@ -9,6 +9,7 @@ import { ShttpService } from './shttp.service';
 export class AppComponent implements OnInit{
   constructor(private shttp: ShttpService) { }
   ngOnInit(): void {
+    this.dblists = [];
     this.post();
   }
   title = 'anexpg';
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit{
   post() {
     this.shttp.postapi(this.para).subscribe((record: any) => {
       this.getval(record);
+      //console.log(record);
     }
     )
   }
@@ -25,6 +27,8 @@ export class AppComponent implements OnInit{
   sumit(){
     this.para.pa01 ='i01';
     this.post();
+    this.para.pa03.co002 = '';
+    this.para.pa03.co003 = '';
   }
   getval(record: any) {
     switch (this.para.pa01) {
@@ -35,6 +39,9 @@ export class AppComponent implements OnInit{
           this.dblists = record;
         }
         break;
+      case 'i01':
+        this.dblists.push(record[0]);
+      break;
     }
   }
 }
