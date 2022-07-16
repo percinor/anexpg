@@ -6,10 +6,10 @@ var strans = require("./strans");
 var spgdb = /** @class */ (function () {
     function spgdb() {
         this.config = {
-            host: '198.52.117.196',
+            host: '127.0.0.1',
             user: "postgres",
             database: "angulardb",
-            password: "post999999",
+            password: "xxxxxxx",
             port: 5432,
             max: 100,
             idleTimeoutMillis: 3000
